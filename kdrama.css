@@ -1,0 +1,135 @@
+/* Algemene instellingen */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('kdrama_background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    background-color: #fce4ec; /* Lichtroze achtergrond */
+}
+
+/* Container voor de inhoud */
+.container {
+    background: rgb(220, 158, 188); /* Lichte witte achtergrond voor de tekst */
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Hartjes animatie container */
+#hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Hartjes stijlen */
+.heart {
+    position: absolute;
+    font-size: 2em;
+    color: #f06292; /* Lichtroze hartjes */
+    animation: flyHeart 6s infinite ease-in-out;
+}
+
+/* Animatie voor het rondvliegen van hartjes */
+@keyframes flyHeart {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(var(--endY)) translateX(var(--endX));
+        opacity: 0;
+    }
+}
+/* Verrassingsgedeelte */
+.surprise {
+    display: none; /* Begin met het verborgen maken van de verrassingstekst */
+    margin-top: 40px;
+    font-size: 75%;
+    color: #f06292; /* Lichtroze voor de verrassingstekst */
+}
+
+.surprise.hidden {
+    display: none;
+}
+
+.surprise.visible {
+    display: block;
+}
+
+.surprise-image {
+    display: block;
+    margin: 20px auto;
+    max-width: 30%; /* Zorg ervoor dat de afbeelding niet te groot is */
+}
+
+.surprise.hidden {
+    display: none;
+}
+
+.surprise.visible {
+    display: block;
+}
+/* Flexbox container voor de afbeeldingen */
+.image-container {
+    display: flex; /* Zorgt ervoor dat de afbeeldingen naast elkaar komen te staan */
+    justify-content: center; /* Centreert de afbeeldingen horizontaal (optioneel) */
+    gap: 20px; /* Ruimte tussen de afbeeldingen (optie) */
+}
+
+/* Stijl voor de afbeeldingen */
+.image {
+    width: 45%; /* Of een andere waarde afhankelijk van de gewenste grootte */
+    height: auto; /* Zorgt ervoor dat de verhouding van de afbeelding behouden blijft */
+}
+
+/* Basisstijl voor de knop */
+button {
+    padding: 15px 30px;  /* Ruimte rondom de tekst */
+    font-size: 18px;     /* Grotere tekst voor de knop */
+    border: none;        /* Verwijder de standaard rand van de knop */
+    border-radius: 12px; /* Maak de hoeken van de knop afgerond */
+    background-color: #f10079; /* Achtergrondkleur (roze tint) */
+    color: white;        /* Witte tekst */
+    cursor: pointer;     /* Wijzig de cursor naar een pointer bij hover */
+    transition: all 0.3s ease-in-out; /* Voeg een vloeiende overgang toe voor hover-effecten */
+}
+
+/* Gloei-effect bij hover */
+button:hover {
+    box-shadow: 0 0 20px rgba(255, 105, 180, 1); /* Gloweffect rondom de knop */
+    transform: scale(1.05); /* Maak de knop iets groter wanneer de muis eroverheen beweegt */
+}
+
+/* Optioneel: Voeg een lichte schaduw toe bij de normale staat van de knop */
+button:focus {
+    outline: none; /* Verwijder de standaard focuslijn in sommige browsers */
+    box-shadow: 0 0 5px rgba(255, 105, 180, 1); /* Lichte glans wanneer de knop geselecteerd wordt */
+}
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.image {
+    width: 45%;   /* Of een andere breedte afhankelijk van hoe groot je de afbeeldingen wilt */
+    height: auto;
+}
+
+#surprise-image {
+    width: 60%;   /* Pas de grootte van de surprise afbeelding aan */
+    margin-top: 20px;
+}

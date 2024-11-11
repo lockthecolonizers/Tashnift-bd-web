@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gelukkige Verjaardag, R3ma Ino (K-Drama Style)</title>
+    <link rel="stylesheet" href="kdrama.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1> Gelukkige Verjaardag, R3ma ino 💞 🤍 </h1>
+        </header>
+
+        <!-- Start de muziek knop -->
+        <div id="music-container">
+            <button onclick="startAudio()">Start de muziek</button>
+        </div>
+
+        <!-- De rest van de inhoud is verborgen tot de muziek start -->
+        <div id="content" style="display: none;">
+            <div class="intro">
+                <p class="dramatic-text">"In the darkest night full of stars you are my moon and the light that shines from your soul... "</p>
+            </div>
+            <div class="love-letter">
+                <h2>Dear Tsayino,</h2>
+                <p>Vandaag is jouw speciale dag, en ik kan niet anders dan denken aan hoe gelukkig ik ben om jou in mijn leven te hebben.</p>
+                <p>Je ogen stralen als de zonsondergang en je lach kan de wereld doen herleven, the most beautiful girl on earth. Ik geniet van elke dag samen met jou en you have that k drama effect on me. I love you.</p>
+            </div>
+
+            <div class="cta">
+                <p class="surprise-text">Ready for the big surprise? Klik op de knop hieronder om mijn laatste woorden aan jou te lezen 💗 </p>
+                <button onclick="revealLoveLetter()">birthday letter 💌</button>
+            </div>
+        </div>
+
+        <!-- De geheime boodschap en afbeelding worden hier verborgen tot de knop wordt geklikt -->
+        <div id="surprise" class="surprise hidden">
+            <h3>💌 Happy birthday to my Tashnift! 💌</h3>
+            <p>I might be in good condition or bad, I don't know. I guess life can't be that predictable. Regardless, it shouldn't stop me from loving you and wishing you a happy birthday. If I'm there, I must have already wished you a happy birthday with some extra attention, but if I'm not... well, that's why I came up with this idea—to make sure I send you a happy birthday through this timer, so it does it for me. I will set the timer around 00:00 to make it more exciting, I guess hahah. I don't know how much you love or celebrate birthdays; I never asked you that question. One year older is not nothing—you turned 18 today, big lady, with already a lot of responsibilities. I'm happy to be part of it, and as much as I want to be living next to you, I have to do it like this.
+
+                Love can be shown in many different ways, and you, Ouazghour, have surely shown me many of them. While I'm typing this, you're probably wondering why I'm ignoring you. We are in a hard period in our relationship, but I know we will get through it. As I feed my soul with your presence and your mindful yet sometimes gibberish words, I can continue with life, my love. I can continue.
+                
+                I just wanted to tell you that I admire you for your resilience and your powerful willingness to choose what is good. If they would ask me to time travel or to fly, I used to answer fly. That would have been Anas' answer before, but now that I have met you, my answer is truly based on my woman. My answer would be firmly, "travel in time." I would travel 18 years back from now and be in a hospital room in Roosendaal, witnessing my future happiness unfold. It would be brought into this world. I would wish to be your childhood lover and your prince charming when you were a little girl. I would wish to be your comfort when things were hard and unfair to you, when you were freshly innocent yet accused of asking for love.
+                
+                I sometimes wonder what life would have been like, living next to you. But you survived without me, and that says a lot—a lot to admire, a lot to look up to. Regardless, you are now with me, and we are going into life together, Anass. I may not make your life easier, but I do sure love you. I will always be there for you and support you in this life and the afterlife.
+                
+                I made this website for you to declare my love for you because you told me you already had plans with friends, but not with me. So, not being there physically hurts because my love language is quality time and gifting. So, I gifted you this. It's not much and nothing special, actually, but I hope you see the idea and meaning behind it. I am thinking about you, and I hope you live a long life with me.
+                
+                Your dear lover and best friend,
+                Anas Nadori</p>
+            
+            <!-- De afbeelding wordt hier getoond na het klikken op de knop -->
+            <img id="surprise-image" src="surprise.jpg" alt="Surprise Afbeelding" class="image">
+        </div>
+
+        <!-- De afbeelding container wordt zichtbaar na de muziek begint -->
+        <div class="image-container" id="image-container">
+            <img src="F.jpg" alt="Afbeelding 1" class="image" id="image1">
+            <img src="F1.JPG" alt="Afbeelding 2" class="image" id="image2">
+        </div>
+        
+    </div>
+
+    <!-- Achtergrondmuziek die eerst verborgen is, wordt pas gestart als de gebruiker op de knop klikt -->
+    <audio id="background-music" loop>
+        <source src="M.mp3" type="audio/mp3">
+        Je browser ondersteunt geen audio.
+    </audio>
+
+    <script>
+        // Functie om de muziek af te spelen
+        function startAudio() {
+            const audio = document.getElementById('background-music');
+            audio.play(); // Speel de audio af als de gebruiker op de knop klikt
+
+            // Verberg de 'Start de muziek' knop
+            document.getElementById('music-container').style.display = 'none';
+
+            // Toon de rest van de inhoud nadat de muziek start
+            document.getElementById('content').style.display = 'block';
+        }
+
+        // Functie om de geheime boodschap zichtbaar te maken en de afbeelding te veranderen
+        function revealLoveLetter() {
+            const surpriseDiv = document.getElementById('surprise');
+            const ctaDiv = document.querySelector('.cta');
+            const loveLetterDiv = document.querySelector('.love-letter');
+            const imageContainer = document.getElementById('image-container');
+            
+            // Verberg de oorspronkelijke inhoud
+            loveLetterDiv.style.display = 'none';
+            ctaDiv.style.display = 'none';
+
+            // Verberg de twee originele afbeeldingen
+            imageContainer.style.display = 'none'; // Verbergt de hele container van afbeeldingen
+
+            // Maak de geheime boodschap zichtbaar
+            surpriseDiv.classList.remove('hidden');
+            surpriseDiv.classList.add('visible');
+
+            // Verander de afbeelding naar de nieuwe afbeelding (bijv. "surprise.jpg")
+            document.getElementById('surprise-image').style.display = 'block'; // Zorg ervoor dat de surprise afbeelding zichtbaar is
+        }
+    </script>
+
+    <!-- Hartjes die rondvliegen (gebruiken de script uit een ander bestand) -->
+    <div id="hearts"></div>
+
+    <script src="kdrama.js"></script>
+</body>
+</html>
